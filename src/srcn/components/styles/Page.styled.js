@@ -19,6 +19,7 @@ export const StyledMain = styled.main`
 
   > span {
     position: absolute;
+    
     left: 0;
     bottom: 0;
     width: 2rem;
@@ -63,6 +64,7 @@ export const StyledSectionHeader = styled(StyledSection)`
   display: flex;
   gap: 1rem;
   padding: 1em;
+  padding-top: 5rem;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.constLight};
   flex-direction: column;
@@ -101,20 +103,22 @@ export const StyledFeature = styled.section`
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
-
+  h3 {
+    color: ${({ theme }) => theme.colors.main};
+    font-weight: bolder;
+  }
   > div {
     display: flex;
     align-items: center;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.constLight};
-    border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     height: 2rem;
     width: auto;
     border: 1px solid white;
 
     &:hover:not(.isActived) {
-      color: ${({ theme }) => theme.colors.main};
+      color: ${({ theme }) => theme.colors.constLight};
     }
   }
 
@@ -127,6 +131,7 @@ export const StyledFeature = styled.section`
     gap: 0.5rem;
 
     h3 {
+      color: ${({ theme }) => theme.colors.main};
       flex: 1 1 100%;
     }
   }

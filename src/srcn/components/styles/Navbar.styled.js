@@ -36,7 +36,7 @@ export const StyledNavbarFeature = styled.div `
   gap: 1rem;
   align-items: center;
   margin-left: auto;
-
+  padding-right: 1rem;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: auto;
   }

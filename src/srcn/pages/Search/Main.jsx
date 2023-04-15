@@ -13,11 +13,8 @@ import PopupBackground from "../../components/PopupBackground";
 
 const Main = () => {
   const { id } = useParams();
-
   const [setlectedMovieID, setSelectedMovieID] = useState(null);
-
   const [viewBy, setViewBy] = useState(true);
-
   return (
     <StyledMain>
       <Features viewBy={viewBy} setViewBy={(bool) => setViewBy(bool)} />

@@ -1,6 +1,7 @@
 
 
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   StyledListByImage,
   StyledListByText,
@@ -20,7 +21,9 @@ const MovieList = ({ datas, idx, setSelectedMovieID, viewBy }) => {
 
   // Pass the value to setSelectedMovieID as props to send the movie data to Contact.jsx.
   // If selectedMovieID is not null, Contact.jsx displays the movie info as position: fixed on the screen.
+  const navigate = useNavigate();
   const onClickHandler = () => {
+    // navigate(`/upcoming`)
     setSelectedMovieID(datas);
   };
 

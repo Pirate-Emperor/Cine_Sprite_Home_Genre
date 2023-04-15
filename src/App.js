@@ -12,11 +12,11 @@ import Footer from "./components/Footer";
 
 
 // srcn
-import "./srcn/font.css";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { darkMode, lightMode } from "./srcn/components/Theme";
-import { GlobalStyles } from "./srcn/components/styles/Global";
+import { GlobalStyles, GlobalHomeStyles } from "./srcn/components/styles/Global";
 
 import Home1 from "./srcn/pages/Home/Home";
 import Search from "./srcn/pages/Search/Search";
@@ -26,26 +26,27 @@ import ErrorPage from "./srcn/pages/Error/ErrorPage";
 import Main from "./srcn/pages/Search/Main";
 import Navbar1 from "./srcn/components/Navbar";
 import Footer1 from "./srcn/components/Footer";
-
+import { UserAuth } from "./context/AuthContext";
 import { StyledContainer } from "./srcn/components/styles/Container.styled";
 
 function App() {
   const [colorMode, setColorMode] = useState(true);
   const [homeMode, setHomeMode] = useState(true);
   const [genreID, setGenreID] = useState(0);
+  
   return (
     (!homeMode)
     ?
     <ThemeProvider theme={colorMode ? lightMode : darkMode}>
       <GlobalStyles />
       <Router>
-        {/* <Navbar1
+        <Navbar1
           colorMode={colorMode}
           setColorMode={(obj) => setColorMode(obj)}
           homeMode={colorMode}
           setHomeMode={(obj) => setHomeMode(obj)}
           
-        /> */}
+        />
 
         <StyledContainer>
           <Routes>
@@ -64,9 +65,12 @@ function App() {
       </Router>
     </ThemeProvider>
     :
-    <div>
+
+      <ThemeProvider theme={colorMode ? lightMode : darkMode}>
       <Router>
+      <GlobalHomeStyles/>
       <AuthContextProvider>
+      
         <Navbar 
         homeMode={colorMode}
         setHomeMode={(obj) => setHomeMode(obj)}
@@ -93,7 +97,8 @@ function App() {
         <Footer/>
       </AuthContextProvider>
       </Router>
-    </div>
+      </ThemeProvider>
+
   );
 }
 

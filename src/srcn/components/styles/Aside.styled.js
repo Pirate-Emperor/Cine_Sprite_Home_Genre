@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const StyledAside = styled.aside`
-  flex: 1 1 20%;
+  flex: 1 1 6%;
   background-color: ${({ theme }) => theme.colors.dark};
   display: flex;
+  padding-top: 4rem;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
@@ -177,6 +178,7 @@ export const StyledAsideHistoryText = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.constLight};
 
   p {
+    font-weight: bolder;
     text-align: center;
     flex: 1 1 100%;
     white-space: nowrap;

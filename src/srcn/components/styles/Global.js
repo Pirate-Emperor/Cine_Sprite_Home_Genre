@@ -1,26 +1,37 @@
 import { createGlobalStyle } from "styled-components";
 
+export const GlobalHomeStyles = createGlobalStyle `
+    &::-webkit-scrollbar {
+      width: .5rem;
+    }
+    &::-webkit-scrollbar-track {
+        background-color:${({ theme }) => theme.colors.Clr};
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.colors.reversedClr};
+    }
+`;
 export const GlobalStyles = createGlobalStyle `
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
     &::-webkit-scrollbar {
       width: .5rem;
     }
      
     &::-webkit-scrollbar-track {
-        background-color:${({ theme }) => theme.colors.light};
+        background-color:${({ theme }) => theme.colors.Clr};
     }
     
     &::-webkit-scrollbar-thumb {
-        background-color: ${({ theme }) => theme.colors.dark};
+        background-color: ${({ theme }) => theme.colors.reversedClr};
     }
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    
     background-color: ${({ theme }) => theme.colors.light};
     font-size: 1rem;
     min-width: ${({ theme }) => theme.minWidth};

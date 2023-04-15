@@ -14,9 +14,10 @@ const Features = ({ sortByURL, setSortByURL, viewBy, setViewBy }) => {
         <h3>Sort By</h3>
         {Object.getOwnPropertyNames(sortBy).map((item) => {
           return (
+              
             <div
               key={item}
-              className={sortByURL === item ? "isActived" : ""}
+              className= {`border text-[#FFFDE3] text-base border-gray-300 py-2 px-5 flex flex-row items-center  hover:border-cyan-600 mb-8 md:mb-0 ${sortByURL === item ? "isActived hover:bg-cyan-200" : "hover:bg-cyan-600"}`}
               onClick={() => setSortByURL(item)}
             >
               <p>
@@ -30,13 +31,13 @@ const Features = ({ sortByURL, setSortByURL, viewBy, setViewBy }) => {
         <h3>View By</h3>
         <div
           onClick={() => setViewBy(true)}
-          className={viewBy ? "isActived" : ""}
+          className={`border text-[#FFFDE3] text-base border-gray-300 py-2 px-5 flex flex-row items-center  hover:border-cyan-600 mb-8 md:mb-0 ${viewBy ? "isActived hover:bg-cyan-200" : "hover:bg-cyan-600"}`}
         >
           <p>Images</p>
         </div>
         <div
           onClick={() => setViewBy(false)}
-          className={!viewBy ? "isActived" : ""}
+          className={`border text-[#FFFDE3] text-base border-gray-300 py-2 px-5 flex flex-row items-center  hover:border-cyan-600 mb-8 md:mb-0 ${!viewBy ? "isActived hover:bg-cyan-200" : "hover:bg-cyan-600"}`}
         >
           <p>Lists</p>
         </div>

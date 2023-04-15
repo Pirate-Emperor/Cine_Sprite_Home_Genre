@@ -61,10 +61,10 @@ const Aside = () => {
       <StyledAsideHistory>
         {historyArray.map((item, idx) => {
           return (
-            <StyledAsideHistoryText key={idx + item}>
+            <StyledAsideHistoryText key={idx + item} className="border text-[#FFFDE3] text-base border-gray-300 flex flex-row  hover:border-cyan-600 mb-8 md:mb-0 hover:bg-cyan-900">
               {/* If clicking on the history, send the movie title value in params. */}
-              <p onClick={() => navigate(item)}>{item}</p>
-              <div onClick={() => historyRemoveByIndex(idx)}>
+              <p className="hover:bg-cyan-300" onClick={() => navigate(item)}>{item}</p>
+              <div className="hover:bg-cyan-300" onClick={() => historyRemoveByIndex(idx)}>
                 <FontAwesomeIcon icon={faCircleXmark} />
               </div>
             </StyledAsideHistoryText>

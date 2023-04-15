@@ -5,7 +5,8 @@ import { faMoon, faMountainSun } from "@fortawesome/free-solid-svg-icons";
 
 
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 import {
   StyledNavbar,
   StyledNavbarLink,
@@ -63,58 +64,145 @@ const Navbar = ({ colorMode, setColorMode, homeMode, setHomeMode }) => {
   const homeClickHandler = () => {
     setHomeMode(true);
   };
+  const navigate = useNavigate();
+  // const handleLogOut = async () => {
+  //   try {
+  //     await logOut();
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   return (
-    <header>
-      <StyledNavbar>
-        <Link to={`/`}>
-        {/* <ReactRoundedImage image={logo}
-        imageWidth="50"
-        imageHeight="50"
-        roundedSize="0"/> */}
-          <img src={logo} alt="CM_logo" />
-        </Link>
-        <StyledNavbarLink >
-              <li key="Home">
-                <NavLink
-                  onClick={homeClickHandler}
-                  exact={true}
-                  to={head+"/"}
-                  className={({ isActive }) => (isActive ? "isActived" : "")}
-                >
-                  Home
-                </NavLink>
-              </li>
-          {links.map(({ path, label, exact }) => {
-            return (
-              <li key={label}>
-                <NavLink
-                  exact={exact}
-                  to={head+path}
-                  className={({ isActive }) => (isActive ? "isActived" : "")}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            );
-          })}
-        </StyledNavbarLink>
-        <StyledNavbarFeature>
-          <Input />
-          <StyledDarkMode
-            onClick={modeClickHandler}
-            className={colorMode ? "lightMode" : "darkMode"}
+    <div className="flex item-center justify-between p-4 z-[100] w-full absolute">
+      <Link to="/" onClick={homeClickHandler}>
+        <h1 className="text-cyan-600 text-4xl font-bold pl-8 cursor-pointer shadow-sm">
+          CINE SPRITE
+        </h1>
+      </Link>
+      <StyledNavbarFeature>
+        <Input />
+         <StyledDarkMode
+          onClick={modeClickHandler}
+          className={colorMode ? "lightMode" : "darkMode"}
+        >
+          <span></span>
+          <p>
+            <FontAwesomeIcon icon={faMountainSun} />
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faMoon} />
+          </p>
+        </StyledDarkMode>
+      </StyledNavbarFeature>
+      {true ? (
+        <div>
+          <Link to="/" onClick={homeClickHandler}>
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Home
+            </button>
+          </Link>
+          <Link to="/genre">
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Genre
+            </button>
+          </Link>
+          <Link to="/search">
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Search
+            </button>
+          </Link>
+          <Link to="/account" onClick={homeClickHandler}>
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">Account</button>
+          </Link>
+
+          <button
+            onClick={homeClickHandler}
+            className="text-[#FFFDE3] text-2xl px-5 py-1.5 rounded cursor-pointer bg-cyan-600  "
           >
-            <span></span>
-            <p>
-              <FontAwesomeIcon icon={faMountainSun} />
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faMoon} />
-            </p>
-          </StyledDarkMode>
-        </StyledNavbarFeature>
-      </StyledNavbar>
-    </header>
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div>
+          <Link to="/" onClick={homeClickHandler}>
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Home
+            </button>
+          </Link>
+          <Link to="/genre">
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Genre
+            </button>
+          </Link>
+          <Link to="/search">
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
+              Search
+            </button>
+          </Link>
+          <Link to="/signIn" onClick={homeClickHandler}>
+            <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">Sign In</button>
+          </Link>
+          <Link to="/signUp" onClick={homeClickHandler}>
+            <button className="text-[#FFFDE3] text-2xl px-5 py-1.5 rounded cursor-pointer bg-cyan-600 ">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      )}
+      
+    </div>
+  //   <header>
+  //   <StyledNavbar>
+  //     <Link to={`/`}>
+  //     {/* <ReactRoundedImage image={logo}
+  //     imageWidth="50"
+  //     imageHeight="50"
+  //     roundedSize="0"/> */}
+  //       <img src={logo} alt="CM_logo" />
+  //     </Link>
+  //     <StyledNavbarLink >
+  //           <li key="Home">
+  //             <NavLink
+  //               onClick={homeClickHandler}
+  //               exact={true}
+  //               to={head+"/"}
+  //               className={({ isActive }) => (isActive ? "isActived" : "")}
+  //             >
+  //               Home
+  //             </NavLink>
+  //           </li>
+  //       {links.map(({ path, label, exact }) => {
+  //         return (
+  //           <li key={label}>
+  //             <NavLink
+  //               exact={exact}
+  //               to={head+path}
+  //               className={({ isActive }) => (isActive ? "isActived" : "")}
+  //             >
+  //               {label}
+  //             </NavLink>
+  //           </li>
+  //         );
+  //       })}
+  //     </StyledNavbarLink>
+  //     <StyledNavbarFeature>
+  //       <Input />
+  //       <StyledDarkMode
+  //         onClick={modeClickHandler}
+  //         className={colorMode ? "lightMode" : "darkMode"}
+  //       >
+  //         <span></span>
+  //         <p>
+  //           <FontAwesomeIcon icon={faMountainSun} />
+  //         </p>
+  //         <p>
+  //           <FontAwesomeIcon icon={faMoon} />
+  //         </p>
+  //       </StyledDarkMode>
+  //     </StyledNavbarFeature>
+  //   </StyledNavbar>
+  // </header>
   );
 };
 

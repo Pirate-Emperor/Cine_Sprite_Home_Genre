@@ -10,6 +10,7 @@ export const defaultValue = {
     deep_sea: "#130560",
     deep_dark_sea: "#08003b",
     main: "#0E86D4",
+
     mobile: "550px",
     tablet: "1050px",
     minWidth: "340px",
@@ -19,7 +20,7 @@ export const defaultValue = {
 export const lightMode = {
     colors: {
         light: "#EDF2F4",
-        dark: "#08003b",
+        dark: "#000000",
         Clr: defaultValue.constLight,
         reversedClr: defaultValue.constDark,
         constLight: defaultValue.constLight,
@@ -35,8 +36,8 @@ export const lightMode = {
 
 export const darkMode = {
     colors: {
-        light: "#08003b",
-        dark: "#130530",
+        light: "#000000",
+        dark: "#0e0000",
         Clr: defaultValue.constDark,
         reversedClr: defaultValue.constLight,
         constLight: defaultValue.constLight,
