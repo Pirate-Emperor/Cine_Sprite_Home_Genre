@@ -29,6 +29,8 @@ const Lists = ({
   path,
   viewBy,
   setSelectedMovieID,
+  homeMode,
+  setHomeMode,
 }) => {
   // fetch and get the result value.
   const { datas, isLoading, requestMovie } = APIUtils();
@@ -138,6 +140,8 @@ const Lists = ({
                     idx={idx + 1 + page * 20}
                     viewBy={viewBy}
                     setSelectedMovieID={(query) => setSelectedMovieID(query)}
+                    homeMode={homeMode} 
+                    setHomeMode={(obj) => setHomeMode(obj)}
                   />
                 );
               });

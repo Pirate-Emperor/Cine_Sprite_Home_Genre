@@ -39,7 +39,7 @@ const Movie = (props) => {
         alt=""
         onClick={handleClick}
       /> 
-      <div className="descriptions absolute w-full top-[20%] p-4 md:p-16">
+      {/* <div className="descriptions absolute w-full top-[20%] p-4 ">
       <h1 className="text-1xl md:text-1xl font-bold overflow-clip">{props.item?.title} </h1>
           <div className="my-4">
             <button onClick={handleClick} className=" border bg-gray-300 text-black border-gray-300 py-2 px-5" >
@@ -63,7 +63,7 @@ const Movie = (props) => {
           <button>
             <i class="fab fa-youtube"></i>
             Play trailer on YouTube
-          </button>
+          </button> */}
           
       <div onClick={handleClick} className="absolute top-0 left-0 w-full h-full   text-white px-5">
         
@@ -71,8 +71,11 @@ const Movie = (props) => {
           <AiFillStar/>
           <p className="text-xs md:text-base font-bold">{props.item?.vote_average} </p>
         </div>
-      </div> </div>  </div>
-    </div></StyledList>
+      </div> 
+      {/* </div>   */}
+      </div>
+    </div>
+    </StyledList>
   );
 };
 

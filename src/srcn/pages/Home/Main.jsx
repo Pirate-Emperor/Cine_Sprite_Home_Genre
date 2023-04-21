@@ -10,7 +10,7 @@ import Lists from "../../components/Lists";
 
 import { request, sortBy } from "../../data/data";
 
-const Main = ({ genreID , setGenreID}) => {
+const Main = ({ genreID , setGenreID, homeMode, setHomeMode}) => {
   // Data is stored to display the content of the movie.
   const [setlectedMovieID, setSelectedMovieID] = useState(null);
 
@@ -36,6 +36,8 @@ const Main = ({ genreID , setGenreID}) => {
         path={sortBy[sortByURL]}
         viewBy={viewBy}
         setSelectedMovieID={(id) => setSelectedMovieID(id)}
+        homeMode={homeMode} 
+        setHomeMode={(obj) => setHomeMode(obj)}
       />
 
       {/* 

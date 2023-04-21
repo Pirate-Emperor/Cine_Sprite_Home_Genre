@@ -11,20 +11,23 @@ import {
 import PosterNull from "./PosterNull";
 import ImageLoading from "../hooks/ImageLoading";
 
-const MovieList = ({ datas, idx, setSelectedMovieID, viewBy }) => {
+const MovieList = ({ datas, idx, setSelectedMovieID, viewBy, homeMode, setHomeMode}) => {
   const { ImageLoad, isImageLoading } = ImageLoading();
   useEffect(() => {
     if (datas.poster_path !== null) {
       ImageLoad("https://image.tmdb.org/t/p/w500/" + datas.poster_path);
     }
   }, [datas]);
-
+  const homeClickHandler =() => {
+    setHomeMode(true);
+  };
   // Pass the value to setSelectedMovieID as props to send the movie data to Contact.jsx.
   // If selectedMovieID is not null, Contact.jsx displays the movie info as position: fixed on the screen.
   const navigate = useNavigate();
   const onClickHandler = () => {
-    // navigate(`/upcoming`)
-    setSelectedMovieID(datas);
+    homeClickHandler()
+    navigate(`/genre/${datas.id}`)
+    // setSelectedMovieID(datas);
   };
 
   // Decide how movies will be displayed.

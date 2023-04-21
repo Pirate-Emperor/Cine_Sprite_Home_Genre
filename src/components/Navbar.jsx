@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-
+import "./navbar.css";
 const Navbar = ({homeMode, setHomeMode}) => {
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
@@ -19,8 +19,19 @@ const Navbar = ({homeMode, setHomeMode}) => {
 
   return (
     <div className="flex item-center justify-between p-4 z-[100] w-full absolute">
+      <div class="bubble small-left"></div>
+      <div class="bubble s-medium-left"></div>
+      <div class="bubble medium-left"></div>
+      <div class="bubble large-left"></div>
+      <div class="bubble small-l-left"></div>
+      <div class="bubble small"></div>
+      <div class="bubble s-medium"></div>
+      <div class="bubble medium"></div>
+      <div class="bubble large"></div>
+      <div class="bubble small-l"></div>
       <Link to="/">
-        <h1 className="text-cyan-600 text-4xl font-bold cursor-pointer pl-8">
+        
+        <h1 className="text-cyan-600 text-4xl font-bold cursor-pointer pl-8 mask">
           CINE SPRITE
         </h1>
       </Link>

@@ -22,11 +22,11 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      <h3>Cine Sprite</h3>
+      <h3>CINE SPRITE</h3>
       <p>
-        GO TO HELL
+      All Rights Reserved
       </p>
-      <p>© COPYRIGHT CINE SPRITE</p>
+      <p>COPYRIGHT©2023  CINE SPRITE</p>
     </StyledFooter>
   );
 };

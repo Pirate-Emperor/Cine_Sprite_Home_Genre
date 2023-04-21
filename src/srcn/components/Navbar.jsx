@@ -13,6 +13,7 @@ import {
   StyledNavbarFeature,
   StyledDarkMode,
 } from "./styles/Navbar.styled";
+import "./navbar.css";
 import logo from "../assets/main_logo.png";
 
 import Input from "./Input";
@@ -64,19 +65,32 @@ const Navbar = ({ colorMode, setColorMode, homeMode, setHomeMode }) => {
   const homeClickHandler = () => {
     setHomeMode(true);
   };
+
+  const { user, logOut } = UserAuth();
   const navigate = useNavigate();
-  // const handleLogOut = async () => {
-  //   try {
-  //     await logOut();
-  //     navigate("/");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+      homeClickHandler();
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="flex item-center justify-between p-4 z-[100] w-full absolute">
-      <Link to="/" onClick={homeClickHandler}>
-        <h1 className="text-cyan-600 text-4xl font-bold pl-8 cursor-pointer shadow-sm">
+      <div class="bubble small-left"></div>
+      <div class="bubble s-medium-left"></div>
+      <div class="bubble medium-left"></div>
+      <div class="bubble large-left"></div>
+      <div class="bubble small-l-left"></div>
+      <div class="bubble small"></div>
+      <div class="bubble s-medium"></div>
+      <div class="bubble medium"></div>
+      <div class="bubble large"></div>
+      <div class="bubble small-l"></div>
+      <Link className="loade" to="/" onClick={homeClickHandler}>
+        <h1 className="text-cyan-600 text-4xl font-bold pl-8 cursor-pointer shadow-sm mask">
           CINE SPRITE
         </h1>
       </Link>
@@ -95,7 +109,7 @@ const Navbar = ({ colorMode, setColorMode, homeMode, setHomeMode }) => {
           </p>
         </StyledDarkMode>
       </StyledNavbarFeature>
-      {true ? (
+      {user?.email ? (
         <div>
           <Link to="/" onClick={homeClickHandler}>
             <button className="text-cyan-500 text-2xl  cursor-pointer pr-4">
@@ -117,7 +131,7 @@ const Navbar = ({ colorMode, setColorMode, homeMode, setHomeMode }) => {
           </Link>
 
           <button
-            onClick={homeClickHandler}
+            onClick={handleLogOut}
             className="text-[#FFFDE3] text-2xl px-5 py-1.5 rounded cursor-pointer bg-cyan-600  "
           >
             Logout

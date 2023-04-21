@@ -2,10 +2,11 @@ import React from 'react'
 import {Navigate} from "react-router-dom"
 import { UserAuth } from '../context/AuthContext'
 
-const ProtectedRoute = ({children}) => {
+const ProtectedRoute = ({setHomeMode,children}) => {
     const {user} = UserAuth()
     if(!user){
-        return <Navigate to="/"></Navigate>
+        setHomeMode(true);
+        return <Navigate to="/signIn"></Navigate>
     }else{
         return children
     }

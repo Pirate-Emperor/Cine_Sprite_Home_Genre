@@ -1,12 +1,12 @@
 
 import React, { useState } from "react";
 import { StyledPage } from "../../components/styles/Page.styled";
+import { loadMyScript } from "../../components/styles/waterhover.js";
 import Aside from "./Aside";
 import Main from "./Main";
 
-const Home = ({genreID, setGenreID}) => {
+const Home = ({ genreID, setGenreID, homeMode, setHomeMode}) => {
   // Save the value in setGenreID to fetch/filter the type of movie.
-
 
   return (
     <StyledPage>
@@ -20,6 +20,8 @@ const Home = ({genreID, setGenreID}) => {
       setGenreID={(int) => {
         setGenreID(int);
       }}
+      homeMode={homeMode} 
+      setHomeMode={(obj) => setHomeMode(obj)}
       />
     </StyledPage>
   );

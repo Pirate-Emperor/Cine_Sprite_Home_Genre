@@ -8,6 +8,9 @@ export const StyledPage = styled.section`
   @media (max-width: ${({ theme }) => theme.tablet}) {
     flex-direction: column;
   }
+
+  
+
 `;
 
 export const StyledMain = styled.main`

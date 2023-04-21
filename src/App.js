@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import { AuthContextProvider } from "./context/AuthContext";
+
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import Account from "./pages/Account";
@@ -26,7 +27,7 @@ import ErrorPage from "./srcn/pages/Error/ErrorPage";
 import Main from "./srcn/pages/Search/Main";
 import Navbar1 from "./srcn/components/Navbar";
 import Footer1 from "./srcn/components/Footer";
-import { UserAuth } from "./context/AuthContext";
+
 import { StyledContainer } from "./srcn/components/styles/Container.styled";
 
 function App() {
@@ -40,17 +41,22 @@ function App() {
     <ThemeProvider theme={colorMode ? lightMode : darkMode}>
       <GlobalStyles />
       <Router>
+      <AuthContextProvider>
         <Navbar1
           colorMode={colorMode}
           setColorMode={(obj) => setColorMode(obj)}
-          homeMode={colorMode}
+          homeMode={homeMode}
           setHomeMode={(obj) => setHomeMode(obj)}
           
         />
 
         <StyledContainer>
           <Routes>
-            <Route exact path="/genre" element={<Home1 genreID={genreID} setGenreID={(int) => {setGenreID(int);}}/>} />
+            <Route exact path="/genre" element={<Home1 homeMode={homeMode} 
+                                                      setHomeMode={(obj) => setHomeMode(obj)} 
+                                                      genreID={genreID} 
+                                                      setGenreID={(int) => {setGenreID(int);}}
+                                                      />} />
             <Route exact path="/search" element={<Search />}>
               <Route path=":id" element={<Main />} />
             </Route>
@@ -62,6 +68,7 @@ function App() {
           </Routes>
         </StyledContainer>
         <Footer1 />
+        </AuthContextProvider>
       </Router>
     </ThemeProvider>
     :
@@ -72,7 +79,7 @@ function App() {
       <AuthContextProvider>
       
         <Navbar 
-        homeMode={colorMode}
+        homeMode={homeMode}
         setHomeMode={(obj) => setHomeMode(obj)}
         />
         <Routes>

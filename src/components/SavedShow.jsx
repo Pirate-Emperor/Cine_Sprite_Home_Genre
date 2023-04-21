@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom';
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../Firebase";
 import { updateDoc, doc, onSnapshot } from "firebase/firestore";
@@ -11,6 +12,11 @@ import {
 const SavedShow = () => {
     const [movies,setMovies]=useState([])
     const {user}= UserAuth();
+    const navigate= useNavigate();
+
+    const handleClick=(item)=>{
+      navigate(`/favorites/${item.id}`)
+    }
 
     useEffect(()=>{
         onSnapshot(doc(db,'users',`${user?.email}`),(doc)=>{
@@ -35,7 +41,7 @@ const SavedShow = () => {
       <div className= "mx-auto max-w-2xl py-10 px-2 sm:py-10 sm:px-6 lg:max-w-7xl">
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {movies.map((item) => (
-            <StyledList className="inline-block cursor-pointer relative">
+            <StyledList className="inline-block cursor-pointer relative" onClick={()=>handleClick(item)}>
             <div key={item.id} className="inline-block cursor-pointer relative ">
               <div className="card"><StyledListByImage>
               <img
