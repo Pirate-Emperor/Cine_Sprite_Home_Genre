@@ -1,6 +1,14 @@
-# Cine_Sprite_Genre
+# Cine_Sprite_Home_Genre
 This is a site (or a component of the project Cine Sprite) which provides simple yet pleasing interface with filters of genre selection and many more.
-Developed by Pirate-Emperor, Cine_Sprite_Genre is a web application inspired by Netflix, but with a specific focus on movie genre selection. The project is built using ReactJS to offer users a tailored experience for exploring movies across various genres.
+Developed by Pirate-Emperor, Cine_Sprite_Genre is a web application inspired by Netflix, but with a specific focus on movie genre selection and also on other aspects of an OTT site. The project is built using ReactJS to offer users a tailored experience for exploring movies across various genres.
+
+## Abstract
+
+According to the Journal of Cultural Economics (2022), attendance frequency per capita found to be 3.89 in the year 2022 which had a decline of 1.90 since 2005 despite having doubled the number of titles produced which forces us to ponder on the quality of the titles produced in the current generation. Hence, in order to prevent redundancy of titles and user-based title production this project has been started. In other words, our main aim is to satisfy customers’ needs and provide them with content of the utmost quality. 
+
+In order to aid the everyone, we created a website called Cine Sprite, which is a Movie Database and Recommendation-Insight Generator System (MDRIGS), created for the specific purpose of generating and providing new title ideas to the producers by incorporating viewer’s data into the title-generator model. In fact, various OTT sites have already incorporated user-based title production but not all the entertainment industry has adopted this approach and so the purpose of the project is to spread this approach around the globe, specifically India, as the latter has the highest number of titles production than any countries.
+
+Secondary Feature would be the ability to view basic information about titles (including movies, web series, anime) such as box office collection, popularity, casting, trailers, ratings etc., which helps in getting user’s habitual actions to improve model’s efficiency. It is designed as a one-stop destination for the user to access the titles that are Upcoming, Popular, Trending or Recommended. 
 
 ## Features
 
@@ -77,10 +85,4 @@ To enhance the project, you can modify the React components in the `src` directo
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-
-According to the Journal of Cultural Economics (2022), attendance frequency per capita found to be 3.89 in the year 2022 which had a decline of 1.90 since 2005 despite having doubled the number of titles produced which forces us to ponder on the quality of the titles produced in the current generation. Hence, in order to prevent redundancy of titles and user-based title production this project has been started. In other words, our main aim is to satisfy customers’ needs and provide them with content of the utmost quality. 
-
-In order to aid the everyone, we created a website called Cine Sprite, which is a Movie Database and Recommendation-Insight Generator System (MDRIGS), created for the specific purpose of generating and providing new title ideas to the producers by incorporating viewer’s data into the title-generator model. In fact, various OTT sites have already incorporated user-based title production but not all the entertainment industry has adopted this approach and so the purpose of the project is to spread this approach around the globe, specifically India, as the latter has the highest number of titles production than any countries.
-
-Secondary Feature would be the ability to view basic information about titles (including movies, web series, anime) such as box office collection, popularity, casting, trailers, ratings etc., which helps in getting user’s habitual actions to improve model’s efficiency. It is designed as a one-stop destination for the user to access the titles that are Upcoming, Popular, Trending or Recommended. 
 
