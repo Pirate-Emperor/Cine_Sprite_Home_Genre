@@ -1,4 +1,5 @@
 # Cine_Sprite_Home_Genre
+![CineSprite](public/cinesprite.png)
 This is a site (or a component of the project Cine Sprite) which provides simple yet pleasing interface with filters of genre selection and many more.
 Developed by Pirate-Emperor, Cine_Sprite_Genre is a web application inspired by Netflix, but with a specific focus on movie genre selection and also on other aspects of an OTT site. The project is built using ReactJS to offer users a tailored experience for exploring movies across various genres.
 
