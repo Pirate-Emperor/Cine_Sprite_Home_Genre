@@ -20,6 +20,15 @@ Secondary Feature would be the ability to view basic information about titles (i
 - **Search Functionality**: Enables users to search for movies based on keywords, titles, or genres.
 - **Recommendations**: Suggests movies based on users' viewing history and preferences.
 
+## Screenshots
+![screenshot1](public/1.png)
+![screenshot2](public/2.png)
+![screenshot3](public/3.png)
+![screenshot4](public/4.png)
+![screenshot5](public/5.png)
+![screenshot6](public/6.png)
+![screenshot7](public/7.png)
+
 # Importance of Movie Genres
 Movie genres are important for a variety of reasons, both for filmmakers and for audiences:
 
